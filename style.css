@@ -35,9 +35,14 @@ button, input, select, textarea { font: inherit; }
   color: white;
 }
 .logo {
-  font-size: 18px;
-  font-weight: 800;
-  letter-spacing: .18em;
+  display: inline-flex;
+  align-items: center;
+}
+.logo img {
+  display: block;
+  width: clamp(105px, 9vw, 150px);
+  height: auto;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,.35));
 }
 .site-header nav {
   display: flex;
@@ -86,6 +91,14 @@ button, input, select, textarea { font: inherit; }
   line-height: .82;
   letter-spacing: -.065em;
   font-weight: 800;
+}
+.badaman-hero-logo {
+  display: block;
+  width: min(720px, 78vw);
+  max-height: 250px;
+  object-fit: contain;
+  margin: 0 auto 22px;
+  filter: drop-shadow(0 12px 28px rgba(0,0,0,.35));
 }
 .hero-copy {
   max-width: 480px;
@@ -337,6 +350,11 @@ textarea { resize: vertical; }
   .site-header nav a:nth-child(2) { display: none; }
   .hero { padding-inline: 18px; }
   .hero h1 { font-size: clamp(54px, 18vw, 94px); }
+  .badaman-hero-logo {
+    width: min(560px, 92vw);
+    margin-bottom: 18px;
+  }
+  .logo img { width: 105px; }
   .shop { padding: 90px 18px 100px; }
   .products { grid-template-columns: 1fr; gap: 80px; }
   .product-details { grid-template-columns: 1fr; }

@@ -20,3 +20,9 @@ Zákazník musí e-mail ve své e-mailové aplikaci odeslat.
 ## Výměna fotek
 Až budeš mít produktové fotky, nahraj je do repozitáře a v `index.html`
 nahraď placeholder bloky elementem `<img>`.
+
+
+## Verze 2 — loga
+Součástí jsou:
+- `badaman-logo.png` — hlavní logo na úvodní stránce
+- `voskytt-logo.png` — logo v horní navigaci
