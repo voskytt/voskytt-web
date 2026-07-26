@@ -1,28 +1,16 @@
-# VOSKYTT web
+# VOSKYTT V3
 
-Jednoduchý statický web pro BADAMAN DROP.
+## Nahrání na GitHub
+Nahraj všechny soubory z této složky do kořene repozitáře `voskytt-web` a potvrď přepsání starých souborů. Cloudflare Pages změnu automaticky nasadí.
 
-## Soubory
-- `index.html`
-- `style.css`
-- `script.js`
+## Před spuštěním dropu doplnit
+1. Datum otevření a zavření dropu.
+2. Finální produktové fotografie.
+3. Potvrzenou cenu Zásilkovny pro ČR a Slovensko.
+4. Identitu a adresu prodávajícího v právních textech.
+5. Finální obchodní podmínky a poučení o odstoupení.
+6. Přímé odesílání objednávkového formuláře místo `mailto:`.
+7. Číslo účtu a text potvrzovacího e-mailu.
 
-## Jak nahrát na GitHub
-1. Otevři repozitář `voskytt-web`.
-2. Klikni `Add file` → `Upload files`.
-3. Nahraj všechny tři soubory.
-4. Klikni `Commit changes`.
-
-## Objednávky
-Formulář vytvoří předvyplněný e-mail na `voskytt@icloud.com`.
-Zákazník musí e-mail ve své e-mailové aplikaci odeslat.
-
-## Výměna fotek
-Až budeš mít produktové fotky, nahraj je do repozitáře a v `index.html`
-nahraď placeholder bloky elementem `<img>`.
-
-
-## Verze 2 — loga
-Součástí jsou:
-- `badaman-logo.png` — hlavní logo na úvodní stránce
-- `voskytt-logo.png` — logo v horní navigaci
+## Fotografie
+Až budou hotové, lze placeholdery nahradit obrázky bez změny struktury webu.
