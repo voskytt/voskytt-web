@@ -3,118 +3,94 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="VOSKYTT — BADAMAN limited drop. BADAMAN TEE a BADAMAN JERSEY.">
-  <meta name="theme-color" content="#0a0a0a">
-  <title>VOSKYTT — BADAMAN DROP</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style-final.css?v=1">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="VOSKYTT — BADAMAN DROP COMING SOON.">
+  <title>VOSKYTT — Drop Coming Soon</title>
+  <link rel="icon" type="image/png" href="voskytt-logo.png">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #000;
+      --text: #fff;
+      --muted: rgba(255,255,255,.62);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { width: 100%; min-height: 100%; }
+
+    body {
+      margin: 0;
+      min-height: 100svh;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: geometricPrecision;
+    }
+
+    main {
+      width: min(90vw, 900px);
+      padding: 36px 20px;
+      text-align: center;
+      animation: reveal 1.15s cubic-bezier(.2,.7,.2,1) both;
+    }
+
+    .logo {
+      display: block;
+      width: clamp(230px, 42vw, 520px);
+      height: auto;
+      margin: 0 auto clamp(52px, 8vh, 96px);
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.1rem, 2.2vw, 1.7rem);
+      font-weight: 600;
+      letter-spacing: .34em;
+      line-height: 1.35;
+      text-transform: uppercase;
+      padding-left: .34em;
+    }
+
+    p {
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: clamp(.72rem, 1.2vw, .88rem);
+      font-weight: 400;
+      letter-spacing: .3em;
+      line-height: 1.5;
+      text-transform: uppercase;
+      padding-left: .3em;
+    }
+
+    @keyframes reveal {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 520px) {
+      main { padding-inline: 14px; }
+      .logo { width: min(78vw, 360px); margin-bottom: 58px; }
+      h1 { letter-spacing: .22em; padding-left: .22em; }
+      p { letter-spacing: .24em; padding-left: .24em; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      main { animation: none; }
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <a class="logo" href="#top" aria-label="VOSKYTT domů">
-      <img src="voskytt-logo.png" alt="VOSKYTT">
-    </a>
-    <nav aria-label="Hlavní navigace">
-      <a href="#shop">KOLEKCE</a>
-      <a href="#info">INFORMACE</a>
-      <a href="https://www.instagram.com/voskytt/" target="_blank" rel="noopener">@VOSKYTT</a>
-    </nav>
-  </header>
-
-  <main id="top">
-    <section class="hero">
-      <div class="hero-noise"></div>
-      <div class="hero-content reveal">
-        <p class="eyebrow">LIMITED DROP</p>
-        <img class="badaman-hero-logo" src="badaman-logo.png" alt="Badaman">
-        <h1>KOLEKCE</h1>
-        <p class="hero-copy">
-          Dva produkty. Jeden drop.<br>
-          Dostupné na omezenou dobu.
-        </p>
-        <a class="button button-light" href="#shop">PŘEJÍT KE KOLEKCI</a>
-      </div>
-      <div class="scroll-indicator">SCROLL</div>
-    </section>
-
-    <section class="marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <span>VOSKYTT / BADAMAN DROP / LIMITED / VOSKYTT / BADAMAN DROP / LIMITED /&nbsp;</span>
-        <span>VOSKYTT / BADAMAN DROP / LIMITED / VOSKYTT / BADAMAN DROP / LIMITED /&nbsp;</span>
-      </div>
-    </section>
-
-    <section class="shop" id="shop">
-      <div class="section-heading reveal">
-        <p class="eyebrow">LIMITED DROP</p>
-        <h2>PRODUKTY</h2>
-      </div>
-
-      <div class="products">
-        <article class="product reveal" data-product="BADAMAN TEE" data-price="799">
-          <div class="product-image placeholder tee-placeholder">
-            <span class="placeholder-label">FOTKA PRODUKTU<br>JIŽ BRZY</span>
-            <span class="placeholder-code">TEE</span>
-          </div>
-          <div class="product-details">
-            <div>
-              <h3>BADAMAN TEE</h3>
-              <p class="price">799 Kč</p>
-            </div>
-            <p class="product-copy">280 GSM • Boxy střih • Prémiová bavlna</p>
-            <a class="button order-button" href="objednavka.html?produkt=tee">PŘEDOBJEDNAT</a>
-          </div>
-        </article>
-
-        <article class="product reveal" data-product="BADAMAN JERSEY" data-price="899">
-          <div class="product-image placeholder jersey-placeholder">
-            <span class="placeholder-label">FOTKA PRODUKTU<br>JIŽ BRZY</span>
-            <span class="placeholder-code">JERSEY</span>
-          </div>
-          <div class="product-details">
-            <div>
-              <h3>BADAMAN JERSEY</h3>
-              <p class="price">899 Kč</p>
-            </div>
-            <p class="product-copy">Pouze 15 kusů celkem • Limitovaná série</p>
-            <a class="button order-button" href="objednavka.html?produkt=jersey">PŘEDOBJEDNAT</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="info" id="info">
-      <div class="info-grid">
-        <div class="reveal">
-          <p class="eyebrow">DOPRAVA</p>
-          <h3>ZÁSILKOVNA</h3>
-          <p>Česko a Slovensko. Doprava stojí 89 Kč za objednávku.</p>
-        </div>
-        <div class="reveal">
-          <p class="eyebrow">PLATBA</p>
-          <h3>BANKOVNÍ PŘEVOD</h3>
-          <p>Po přijetí objednávky ti zašleme platební údaje e-mailem.</p>
-        </div>
-        <div class="reveal">
-          <p class="eyebrow">DODÁNÍ</p>
-          <h3>PŘEDOBJEDNÁVKA</h3>
-          <p>TEE přibližně 2–3 týdny. JERSEY přibližně 4–6 týdnů po ukončení dropu.</p>
-        </div>
-      </div>
-    </section>
+  <main aria-label="VOSKYTT coming soon">
+    <img class="logo" src="voskytt-logo.png" alt="VOSKYTT">
+    <h1>Drop Coming Soon</h1>
+    <p>Stay Ready.</p>
   </main>
-
-  <footer>
-    <span>© <span id="year"></span> VOSKYTT</span>
-    <div class="footer-links">
-      <a href="objednavka.html">OBJEDNÁVKA</a>
-      <a href="mailto:voskytt@icloud.com">E-MAIL</a>
-      <a href="https://www.instagram.com/voskytt/" target="_blank" rel="noopener">INSTAGRAM</a>
-    </div>
-  </footer>
-
-  <script src="script-final.js?v=1"></script>
 </body>
 </html>
