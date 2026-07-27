@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-final.css?v=2">
 </head>
 <body>
   <header class="site-header">
@@ -35,6 +35,7 @@
           <input type="hidden" name="_subject" value="Nová objednávka VOSKYTT — BADAMAN DROP">
           <input type="hidden" name="_next" value="https://voskytt.cz/dekujeme.html">
           <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
           <input type="text" name="_honey" style="display:none">
           <input type="hidden" id="hiddenProductPrice" name="Cena produktu">
           <input type="hidden" id="hiddenShipping" name="Doprava" value="89 Kč">
@@ -42,19 +43,19 @@
 
           <div class="form-grid">
             <div class="form-field">
-              <label for="name">JMÉNO A PŘÍJMENÍ</label>
+              <label for="name">Jméno a příjmení</label>
               <input id="name" name="Jméno a příjmení" type="text" autocomplete="name" required>
             </div>
             <div class="form-field">
-              <label for="email">E-MAIL</label>
+              <label for="email">E-mail</label>
               <input id="email" name="E-mail" type="email" autocomplete="email" required>
             </div>
             <div class="form-field">
-              <label for="phone">TELEFON</label>
+              <label for="phone">Telefon</label>
               <input id="phone" name="Telefon" type="tel" autocomplete="tel" required>
             </div>
             <div class="form-field">
-              <label for="country">ZEMĚ</label>
+              <label for="country">Země</label>
               <select id="country" name="Země" required>
                 <option value="">Vyber zemi</option>
                 <option value="Česko">Česko</option>
@@ -62,14 +63,14 @@
               </select>
             </div>
             <div class="form-field">
-              <label for="product">PRODUKT</label>
+              <label for="product">Produkt</label>
               <select id="product" name="Produkt" required>
                 <option value="tee" data-price="799">BADAMAN TEE — 799 Kč</option>
                 <option value="jersey" data-price="899">BADAMAN JERSEY — 899 Kč</option>
               </select>
             </div>
             <div class="form-field">
-              <label for="size">VELIKOST</label>
+              <label for="size">Velikost</label>
               <select id="size" name="Velikost" required>
                 <option value="">Vyber velikost</option>
                 <option>S</option>
@@ -80,7 +81,7 @@
               </select>
             </div>
             <div class="form-field">
-              <label for="quantity">POČET KUSŮ</label>
+              <label for="quantity">Počet kusů</label>
               <select id="quantity" name="Počet kusů" required>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -88,24 +89,28 @@
               </select>
             </div>
             <div class="form-field">
-              <label for="pickup">POBOČKA ZÁSILKOVNY</label>
-              <input id="pickup" name="Pobočka Zásilkovny" type="text" placeholder="Název, adresa nebo kód pobočky" required>
+              <label for="pickup">Výdejní místo Zásilkovny</label>
+              <input id="pickup" name="Výdejní místo Zásilkovny" type="text" placeholder="Název, adresa nebo kód pobočky" required>
             </div>
             <div class="form-field full">
-              <label for="note">POZNÁMKA</label>
+              <label for="note">Poznámka</label>
               <textarea id="note" name="Poznámka" placeholder="Nepovinné"></textarea>
             </div>
             <label class="checkbox-row form-field full">
-              <input type="checkbox" required>
+              <input type="checkbox" name="Souhlas se zpracováním údajů" value="Ano" required>
               <span>Souhlasím se zpracováním zadaných údajů za účelem vyřízení objednávky.</span>
             </label>
           </div>
 
+          <div class="payment-note">
+            <p><strong>Jak objednávka probíhá</strong></p>
+            <p>Po odeslání ti zašleme platební údaje e-mailem. Platba probíhá bankovním převodem a výroba začne po ukončení dropu.</p>
+          </div>
           <button class="button order-submit" type="submit">ODESLAT OBJEDNÁVKU</button>
         </form>
 
         <aside class="order-summary" aria-live="polite">
-          <p class="eyebrow">SOUHRN</p>
+          <p class="eyebrow">SOUHRN OBJEDNÁVKY</p>
           <div class="summary-row"><span>Produkt</span><strong id="summaryProduct">BADAMAN TEE</strong></div>
           <div class="summary-row"><span>Cena za kus</span><strong id="summaryUnit">799 Kč</strong></div>
           <div class="summary-row"><span>Počet</span><strong id="summaryQuantity">1</strong></div>
@@ -119,6 +124,6 @@
     </div>
   </main>
 
-  <script src="order.js"></script>
+  <script src="order-final.js?v=2"></script>
 </body>
 </html>

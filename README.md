@@ -1,22 +1,7 @@
-# VOSKYTT — finální balíček V2
+# VOSKYTT – čistý finální balíček
 
-Obsah:
-- `index.html` — hlavní stránka
-- `style.css` — původní design V2 + styly objednávky
-- `script.js` — animace hlavní stránky
-- `objednavka.html` — objednávkový formulář
-- `order.js` — výpočet ceny a předvýběr produktu
-- `dekujeme.html` — potvrzení po odeslání
-- loga VOSKYTT a BADAMAN
+Nahraj všechny soubory přímo do kořene GitHub repozitáře.
 
-## Nasazení přes GitHub Desktop
+Tento balíček používá nové názvy CSS a JavaScript souborů (`style-final.css`, `script-final.js`, `order-final.js`), takže se nemůže načítat stará rozbitá verze z cache.
 
-1. Rozbal ZIP.
-2. Zkopíruj všechny soubory z rozbalené složky do lokální složky repozitáře `voskytt-web` a potvrď nahrazení existujících souborů.
-3. V GitHub Desktop napiš například `Hotový formulář a informace`.
-4. Klikni `Commit to main` a potom `Push origin`.
-
-## První test objednávky
-
-Formulář používá FormSubmit a posílá objednávky na `voskytt@icloud.com`.
-Při prvním testovacím odeslání může přijít aktivační e-mail. Otevři ho a potvrď adresu. Potom odešli druhou testovací objednávku a ověř, že dorazila se všemi údaji.
+Po nahrání otevři web v anonymním okně nebo použij Ctrl+Shift+R.
