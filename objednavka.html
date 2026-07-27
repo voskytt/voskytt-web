@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style-final.css?v=4">
+  <link rel="stylesheet" href="style-final.css?v=5">
 </head>
 <body>
   <header class="site-header">
@@ -27,7 +27,7 @@
       <div class="order-heading">
         <p class="eyebrow">LIMITED DROP</p>
         <h1>OBJEDNÁVKA</h1>
-        <p class="order-intro">Vyplň údaje níže. Po přijetí objednávky ti zašleme platební údaje e-mailem. Platba probíhá bankovním převodem.</p>
+        <p class="order-intro">Vyplň údaje níže. Můžeš objednat tričko, dres nebo oba produkty najednou. Platební údaje ti zašleme e-mailem po přijetí objednávky.</p>
       </div>
 
       <div class="order-layout">
@@ -37,8 +37,9 @@
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
           <input type="text" name="_honey" style="display:none">
-          <input type="hidden" id="hiddenProductPrice" name="Cena produktu">
-          <input type="hidden" id="hiddenShipping" name="Doprava" value="89 Kč">
+          <input type="hidden" id="hiddenTee" name="BADAMAN TEE">
+          <input type="hidden" id="hiddenJersey" name="BADAMAN JERSEY">
+          <input type="hidden" name="Doprava" value="89 Kč">
           <input type="hidden" id="hiddenTotal" name="Celkem">
 
           <div class="form-grid">
@@ -62,33 +63,65 @@
                 <option value="Slovensko">Slovensko</option>
               </select>
             </div>
-            <div class="form-field">
-              <label for="product">Produkt</label>
-              <select id="product" name="Produkt" required>
-                <option value="tee" data-price="799">BADAMAN TEE — 799 Kč</option>
-                <option value="jersey" data-price="899">BADAMAN JERSEY — 899 Kč</option>
-              </select>
+          </div>
+
+          <section class="product-selection" aria-labelledby="productsHeading">
+            <div class="selection-heading">
+              <p class="eyebrow" id="productsHeading">VYBER PRODUKTY</p>
+              <p>Zvol počet kusů. Produkt, který nechceš, nech na hodnotě 0.</p>
             </div>
-            <div class="form-field">
-              <label for="size">Velikost</label>
-              <select id="size" name="Velikost" required>
-                <option value="">Vyber velikost</option>
-                <option>S</option>
-                <option>M</option>
-                <option>L</option>
-                <option>XL</option>
-                <option>XXL</option>
-              </select>
+
+            <div class="order-product-card">
+              <div class="order-product-title">
+                <div><strong>BADAMAN TEE</strong><span>799 Kč</span></div>
+              </div>
+              <div class="product-fields">
+                <div class="form-field">
+                  <label for="teeQuantity">Počet kusů</label>
+                  <select id="teeQuantity">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="teeSize">Velikost</label>
+                  <select id="teeSize">
+                    <option value="">Vyber velikost</option>
+                    <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
+                  </select>
+                </div>
+              </div>
             </div>
-            <div class="form-field">
-              <label for="quantity">Počet kusů</label>
-              <select id="quantity" name="Počet kusů" required>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
+
+            <div class="order-product-card">
+              <div class="order-product-title">
+                <div><strong>BADAMAN JERSEY</strong><span>899 Kč</span></div>
+                <p>Limitovaný na 15 kusů celkem.</p>
+              </div>
+              <div class="product-fields">
+                <div class="form-field">
+                  <label for="jerseyQuantity">Počet kusů</label>
+                  <select id="jerseyQuantity">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="jerseySize">Velikost</label>
+                  <select id="jerseySize">
+                    <option value="">Vyber velikost</option>
+                    <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
+                  </select>
+                </div>
+              </div>
             </div>
-            <div class="form-field">
+            <p class="product-error" id="productError" role="alert"></p>
+          </section>
+
+          <div class="form-grid order-details-grid">
+            <div class="form-field full">
               <label for="pickup">Výdejní místo Zásilkovny</label>
               <input id="pickup" name="Výdejní místo Zásilkovny" type="text" placeholder="Název, adresa nebo kód pobočky" required>
             </div>
@@ -111,12 +144,12 @@
 
         <aside class="order-summary" aria-live="polite">
           <p class="eyebrow">SOUHRN OBJEDNÁVKY</p>
-          <div class="summary-row"><span>Produkt</span><strong id="summaryProduct">BADAMAN TEE</strong></div>
-          <div class="summary-row"><span>Cena za kus</span><strong id="summaryUnit">799 Kč</strong></div>
-          <div class="summary-row"><span>Počet</span><strong id="summaryQuantity">1</strong></div>
-          <div class="summary-row"><span>Doprava</span><strong>89 Kč</strong></div>
-          <div class="summary-row summary-total"><span>CELKEM</span><strong id="summaryTotal">888 Kč</strong></div>
-          <p class="summary-note" id="limitNote">BADAMAN TEE je dostupné v rámci předobjednávky po dobu dropu.</p>
+          <div class="summary-row product-summary-row" id="teeSummary"><span>BADAMAN TEE</span><strong id="teeSummaryValue">0 ks</strong></div>
+          <div class="summary-row product-summary-row" id="jerseySummary"><span>BADAMAN JERSEY</span><strong id="jerseySummaryValue">0 ks</strong></div>
+          <div class="summary-row"><span>Mezisoučet</span><strong id="summarySubtotal">0 Kč</strong></div>
+          <div class="summary-row"><span>Doprava</span><strong id="summaryShipping">0 Kč</strong></div>
+          <div class="summary-row summary-total"><span>CELKEM</span><strong id="summaryTotal">0 Kč</strong></div>
+          <p class="summary-note">BADAMAN JERSEY je limitovaný na 15 kusů celkem. Dostupnost potvrdíme e-mailem.</p>
         </aside>
       </div>
 
@@ -124,6 +157,20 @@
     </div>
   </main>
 
-  <script src="order-final.js?v=2"></script>
+  <div class="confirm-modal" id="confirmModal" hidden>
+    <div class="confirm-backdrop" data-close-modal></div>
+    <section class="confirm-dialog" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+      <p class="eyebrow">KONTROLA OBJEDNÁVKY</p>
+      <h2 id="confirmTitle">Opravdu odeslat?</h2>
+      <p>Zkontroluj údaje a celkovou cenu. Po odeslání ti přijdou platební informace e-mailem.</p>
+      <div class="confirm-total"><span>CELKEM</span><strong id="modalTotal">0 Kč</strong></div>
+      <div class="confirm-actions">
+        <button type="button" class="button" id="cancelSubmit">ZRUŠIT</button>
+        <button type="button" class="button button-light" id="confirmSubmit">ODESLAT</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="order-final.js?v=5"></script>
 </body>
 </html>
