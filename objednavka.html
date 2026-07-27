@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style-final.css?v=5">
+  <link rel="stylesheet" href="style-final.css?v=7">
 </head>
 <body>
   <header class="site-header">
@@ -79,10 +79,12 @@
                 <div class="form-field">
                   <label for="teeQuantity">Počet kusů</label>
                   <select id="teeQuantity">
-                    <option value="0">0</option>
+                    <option value="0">0 — nechci</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
                   </select>
                 </div>
                 <div class="form-field">
@@ -98,14 +100,18 @@
             <div class="order-product-card">
               <div class="order-product-title">
                 <div><strong>BADAMAN JERSEY</strong><span>899 Kč</span></div>
-                <p>Limitovaný na 15 kusů celkem.</p>
+                <p id="jerseyLimit">Limitovaná série — vyrobeno bude pouze 15 kusů celkem.</p>
               </div>
               <div class="product-fields">
                 <div class="form-field">
                   <label for="jerseyQuantity">Počet kusů</label>
-                  <select id="jerseyQuantity">
-                    <option value="0">0</option>
+                  <select id="jerseyQuantity" aria-describedby="jerseyLimit">
+                    <option value="0">0 — nechci</option>
                     <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
                   </select>
                 </div>
                 <div class="form-field">
@@ -171,6 +177,6 @@
     </section>
   </div>
 
-  <script src="order-final.js?v=5"></script>
+  <script src="order-final.js?v=7"></script>
 </body>
 </html>

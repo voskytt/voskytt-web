@@ -1,9 +1,8 @@
-# VOSKYTT — objednávka V5
+# VOSKYTT – objednávka V6
 
-- TEE a JERSEY lze objednat současně.
-- Doprava 89 Kč se počítá jednou za objednávku.
-- JERSEY je omezen na 1 kus v jedné objednávce a 15 kusů celkem.
-- Před odesláním se zobrazí potvrzovací okno.
-- Objednávky odesílá FormSubmit na voskytt@icloud.com.
+Změna oproti V5:
+- BADAMAN JERSEY už nemá limit 1 kus na objednávku.
+- Počet dresů se zadává číslem bez horního limitu.
+- Celková série zůstává limitovaná na 15 kusů.
 
-Nahraj všechny soubory přímo do kořene GitHub repozitáře a potvrď přepsání souborů.
+Nahraj všechny soubory do kořene GitHub repozitáře a přepiš staré verze.
