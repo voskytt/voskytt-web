@@ -366,25 +366,93 @@ textarea { resize: vertical; }
   .two-cols { grid-template-columns: 1fr; }
 }
 
-/* Objednávková stránka — doplněk, hlavní V2 zůstává beze změny */
-.order-header { mix-blend-mode: normal; background: rgba(10,10,10,.86); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
-.order-page { min-height: 100svh; padding: 150px 34px 90px; max-width: 980px; margin: 0 auto; }
-.order-intro { margin-bottom: 54px; }
-.order-intro h1, .thanks-page h1 { margin: 0; font-size: clamp(54px, 10vw, 118px); line-height: .82; letter-spacing: -.065em; }
-.order-intro > p:last-child { max-width: 560px; color: var(--muted); line-height: 1.7; margin-top: 28px; }
-.order-form { border-top: 1px solid var(--line); padding-top: 32px; }
-.order-form label { display: grid; gap: 10px; font-size: 11px; font-weight: 700; letter-spacing: .12em; }
-.order-form input, .order-form select, .order-form textarea { width: 100%; border: 1px solid var(--line); background: #101010; color: var(--text); padding: 15px 16px; border-radius: 0; outline: none; }
-.order-form input:focus, .order-form select:focus, .order-form textarea:focus { border-color: var(--text); }
-.order-form .form-row { margin-bottom: 20px; }
-.order-form .two-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.order-form .consent { display: flex; grid-template-columns: none; align-items: center; gap: 12px; margin: 26px 0; letter-spacing: 0; font-weight: 500; }
-.order-form .consent input { width: 18px; height: 18px; }
-.order-total { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 22px 0; margin-bottom: 24px; font-size: 12px; letter-spacing: .14em; }
-.order-total strong { font-size: 22px; letter-spacing: 0; }
-.button-submit { width: 100%; }
-.form-note { color: var(--muted); font-size: 12px; line-height: 1.6; }
-.thanks-page { min-height: 100svh; display: grid; place-content: center; text-align: center; padding: 40px 24px; }
-.thanks-page img { width: min(180px, 45vw); margin: 0 auto 70px; }
-.thanks-page p:not(.eyebrow) { color: var(--muted); margin: 30px auto; max-width: 520px; line-height: 1.7; }
-@media (max-width: 700px) { .order-page { padding: 120px 18px 70px; } .order-form .two-cols { grid-template-columns: 1fr; } }
+/* Jemnější doprovodný text pod nadpisem kolekce */
+.hero-copy {
+  font-size: 14px;
+  letter-spacing: .01em;
+}
+
+/* Objednávková stránka — zachovává vizuální jazyk původní V2 */
+.order-page {
+  min-height: 100svh;
+  padding: 150px 34px 100px;
+}
+.order-shell {
+  width: min(920px, 100%);
+  margin: 0 auto;
+}
+.order-intro {
+  max-width: 720px;
+  margin-bottom: 54px;
+}
+.order-intro h1 {
+  margin: 0;
+  font-size: clamp(54px, 10vw, 120px);
+  line-height: .84;
+  letter-spacing: -.065em;
+}
+.order-intro p:last-child {
+  max-width: 600px;
+  margin: 28px 0 0;
+  color: #aaa;
+  line-height: 1.7;
+}
+.order-form {
+  border-top: 1px solid var(--line);
+  padding-top: 34px;
+}
+.order-form label { color: #d7d7d2; }
+.order-form input,
+.order-form select,
+.order-form textarea {
+  border-color: var(--line);
+  color: var(--text);
+  background: #0d0d0d;
+}
+.order-form input:focus,
+.order-form select:focus,
+.order-form textarea:focus { border-color: #f4f4f1; }
+.order-form select option { color: #111; }
+.order-form .consent { color: #aaa; }
+.order-form .order-total { border-color: var(--line); }
+.order-form .button-submit {
+  background: var(--light);
+  color: var(--dark);
+  border-color: var(--light);
+}
+.order-form .button-submit:hover {
+  background: transparent;
+  color: var(--light);
+}
+.order-back {
+  display: inline-block;
+  margin-bottom: 28px;
+  color: #aaa;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+.thank-you {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 120px 24px;
+  text-align: center;
+}
+.thank-you-inner { max-width: 760px; }
+.thank-you h1 {
+  margin: 0 0 28px;
+  font-size: clamp(54px, 10vw, 112px);
+  line-height: .86;
+  letter-spacing: -.065em;
+}
+.thank-you p {
+  max-width: 560px;
+  margin: 0 auto 34px;
+  color: #aaa;
+  line-height: 1.7;
+}
+@media (max-width: 800px) {
+  .order-page { padding: 120px 18px 80px; }
+  .order-form .two-cols { grid-template-columns: 1fr; }
+}
