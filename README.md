@@ -1,16 +1,15 @@
-# VOSKYTT V3
+# VOSKYTT web V2.5
 
 ## Nahrání na GitHub
-Nahraj všechny soubory z této složky do kořene repozitáře `voskytt-web` a potvrď přepsání starých souborů. Cloudflare Pages změnu automaticky nasadí.
+1. Rozbal ZIP.
+2. V repozitáři smaž/staré soubory nahraď všemi soubory z této složky.
+3. Nahraj i obě PNG loga.
+4. Commitni změny. Cloudflare Pages nasadí web automaticky.
 
-## Před spuštěním dropu doplnit
-1. Datum otevření a zavření dropu.
-2. Finální produktové fotografie.
-3. Potvrzenou cenu Zásilkovny pro ČR a Slovensko.
-4. Identitu a adresu prodávajícího v právních textech.
-5. Finální obchodní podmínky a poučení o odstoupení.
-6. Přímé odesílání objednávkového formuláře místo `mailto:`.
-7. Číslo účtu a text potvrzovacího e-mailu.
+## Důležité před spuštěním prodeje
+- Doplň do `podminky.html` a `soukromi.html` úplnou identifikaci prodávajícího/správce (zejména adresu a případné IČO).
+- Otestuj formulář na mobilu i počítači. Používá `mailto:`, takže otevře e-mailovou aplikaci zákazníka.
+- Po doručení fotek nahraď placeholdery v `index.html` skutečnými obrázky.
 
-## Fotografie
-Až budou hotové, lze placeholdery nahradit obrázky bez změny struktury webu.
+## Objednávky
+Formulář připraví e-mail pro `voskytt@icloud.com`. Platební údaje se posílají ručně. Hotové šablony jsou v `EMAIL-SABLONY.md`.

@@ -2,176 +2,124 @@
 <html lang="cs">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="BADAMAN — limitovaný sedmidenní pre-order drop od VOSKYTT.">
-  <meta name="theme-color" content="#050505">
-  <meta property="og:title" content="VOSKYTT — BADAMAN">
-  <meta property="og:description" content="Limitovaný sedmidenní pre-order drop.">
-  <title>VOSKYTT — BADAMAN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BADAMAN DROP 01 od VOSKYTT. Předobjednávka trička a limitovaného dresu.">
+  <meta name="theme-color" content="#090909">
+  <title>VOSKYTT — BADAMAN DROP 01</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="loader" aria-hidden="true">
-    <img src="badaman-logo.png" alt="">
-  </div>
-
-  <header class="header">
-    <a href="#top" class="brand" aria-label="VOSKYTT domů">
-      <img src="voskytt-logo.png" alt="VOSKYTT">
-    </a>
-    <button class="menu-toggle" type="button" aria-label="Otevřít menu" aria-expanded="false">
-      <span></span><span></span>
-    </button>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="VOSKYTT – domů"><img src="voskytt-logo.png" alt="VOSKYTT"></a>
+    <button class="menu-button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav id="main-nav" aria-label="Hlavní navigace">
+      <a href="#produkty">Produkty</a>
+      <a href="#informace">Informace</a>
+      <a href="#faq">FAQ</a>
+      <a class="nav-order" href="objednavka.html">Předobjednat</a>
+    </nav>
   </header>
-
-  <nav class="menu" aria-hidden="true">
-    <div class="menu-inner">
-      <a href="#products" data-menu-link>SHOP <span>01</span></a>
-      <a href="#preorder" data-menu-link>PRE-ORDER <span>02</span></a>
-      <a href="#faq" data-menu-link>FAQ <span>03</span></a>
-      <a href="#contact" data-menu-link>CONTACT <span>04</span></a>
-      <a href="https://www.instagram.com/voskytt/" target="_blank" rel="noopener">INSTAGRAM ↗</a>
-    </div>
-  </nav>
 
   <main id="top">
     <section class="hero">
-      <div class="grain"></div>
-      <div class="hero-meta">
-        <span>LIMITED PRE-ORDER</span>
-        <span>7 DAYS ONLY</span>
+      <div class="hero-inner reveal">
+        <p class="kicker">DROP 01 · PŘEDOBJEDNÁVKA</p>
+        <img class="hero-logo" src="badaman-logo.png" alt="BADAMAN">
+        <h1>První oblečení z projektu BADAMAN.</h1>
+        <p class="hero-text">Dva kusy. Sedm dní. Dres vznikne pouze v patnácti kusech.</p>
+        <div class="hero-actions">
+          <a class="button button-light" href="#produkty">Prohlédnout produkty</a>
+          <a class="text-link" href="objednavka.html">Přejít k objednávce →</a>
+        </div>
       </div>
-      <div class="hero-center">
-        <img src="badaman-logo.png" alt="BADAMAN" class="hero-logo">
-        <p>FROM THE FIELD TO THE CITY.</p>
-      </div>
-      <a class="enter" href="#products">ENTER DROP <span>↓</span></a>
+      <a class="scroll-cue" href="#produkty" aria-label="Přejít k produktům">↓</a>
     </section>
 
-    <section class="statement reveal">
-      <p>LIMITED PIECES.<br>MADE AFTER THE DROP.</p>
-    </section>
+    <div class="ticker" aria-hidden="true"><div>VOSKYTT · BADAMAN · DROP 01 · PŘEDOBJEDNÁVKA · VOSKYTT · BADAMAN · DROP 01 · PŘEDOBJEDNÁVKA ·</div></div>
 
-    <section class="products" id="products">
-      <article class="product reveal" data-product="BADAMAN TEE" data-price="800" data-delivery="2–3 týdny">
-        <div class="product-visual tee">
-          <div class="photo-placeholder">
-            <span>PRODUCT IMAGE</span>
-            <strong>COMING SOON</strong>
-          </div>
-          <span class="index">01</span>
-        </div>
-        <div class="product-info">
-          <div class="product-title">
-            <h2>BADAMAN TEE</h2>
-            <span>800 Kč</span>
-          </div>
-          <p class="lead">Černé unisex heavy triko s boxy střihem.</p>
-          <div class="specs">
-            <span>280 GSM</span><span>PREMIUM COTTON</span><span>UNISEX BOXY FIT</span>
-          </div>
-          <p class="description">Vyrobeno z prvotřídní bavlny. Uvolněný střih poskytuje pohodlí a volnost pohybu bez kompromisu v siluetě.</p>
-          <button class="cta open-order" type="button">JOIN THE DROP <span>↗</span></button>
-        </div>
-      </article>
+    <section class="section products-section" id="produkty">
+      <header class="section-head reveal">
+        <div><p class="kicker">DROP 01</p><h2>Produkty</h2></div>
+        <p>Fotografie produktů doplníme po doručení vzorků. Rozložení je na ně už připravené.</p>
+      </header>
 
-      <article class="product reverse reveal" data-product="BADAMAN JERSEY" data-price="899" data-delivery="4–6 týdnů">
-        <div class="product-visual jersey">
-          <div class="photo-placeholder">
-            <span>PRODUCT IMAGE</span>
-            <strong>COMING SOON</strong>
+      <div class="product-grid">
+        <article class="product-card reveal">
+          <div class="product-visual product-tee">
+            <span class="visual-number">01</span>
+            <span class="visual-copy">Fotografie<br>již brzy</span>
           </div>
-          <span class="index">02</span>
-        </div>
-        <div class="product-info">
-          <div class="product-title">
-            <h2>BADAMAN JERSEY</h2>
-            <span>899 Kč</span>
+          <div class="product-body">
+            <div class="product-title"><h3>BADAMAN TEE</h3><strong>799 Kč</strong></div>
+            <p>Černé těžké tričko s volnějším unisex střihem.</p>
+            <ul>
+              <li>280 GSM</li><li>Boxy unisex střih</li><li>Prémiová bavlna</li><li>Velikosti S–XXL</li>
+            </ul>
+            <div class="product-meta"><span>Dodání 2–3 týdny</span><span>Neomezená předobjednávka</span></div>
+            <a class="button" href="objednavka.html?produkt=tee">Předobjednat tričko</a>
           </div>
-          <p class="lead">Moderní streetwear dres připravený na hřiště i do města.</p>
-          <div class="specs">
-            <span>BREATHABLE</span><span>QUICK-DRY</span><span>FLEXIBLE FIT</span>
-          </div>
-          <p class="description">Lehký funkční materiál odvádí pot a neomezuje pohyb. Čistý vzhled funguje stejně dobře ke kopačkám jako k teniskám a džínám.</p>
-          <button class="cta open-order" type="button">JOIN THE DROP <span>↗</span></button>
-        </div>
-      </article>
-    </section>
+        </article>
 
-    <section class="preorder" id="preorder">
-      <div class="section-kicker reveal">HOW IT WORKS</div>
-      <div class="process">
-        <div class="process-item reveal"><span>01</span><h3>7-DAY DROP</h3><p>Objednávky budou otevřené od neděle do neděle. Přesné datum doplníme před spuštěním.</p></div>
-        <div class="process-item reveal"><span>02</span><h3>MADE TO ORDER</h3><p>Po skončení dropu zadáme všechny objednané kusy do výroby.</p></div>
-        <div class="process-item reveal"><span>03</span><h3>DELIVERY</h3><p>TEE přibližně 2–3 týdny. JERSEY přibližně 4–6 týdnů od ukončení dropu.</p></div>
+        <article class="product-card reveal">
+          <div class="product-visual product-jersey">
+            <span class="limit-badge">Pouze 15 kusů</span>
+            <span class="visual-number">02</span>
+            <span class="visual-copy">Fotografie<br>již brzy</span>
+          </div>
+          <div class="product-body">
+            <div class="product-title"><h3>BADAMAN JERSEY</h3><strong>899 Kč</strong></div>
+            <p>Limitovaný dres BADAMAN. Po vyprodání se už nebude vyrábět.</p>
+            <ul>
+              <li>Limit 15 kusů celkem</li><li>Každá velikost se počítá do limitu</li><li>Velikosti S–XXL</li><li>Jednorázová výroba</li>
+            </ul>
+            <div class="product-meta"><span>Dodání 4–6 týdnů</span><span>Po vyprodání konec</span></div>
+            <a class="button" href="objednavka.html?produkt=jersey">Předobjednat dres</a>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="shipping reveal">
-      <div><span>SHIPPING</span><strong>ZÁSILKOVNA</strong></div>
-      <div><span>DESTINATIONS</span><strong>ČR + SLOVENSKO</strong></div>
-      <div><span>PRICE</span><strong>89 Kč*</strong></div>
-      <div><span>PAYMENT</span><strong>BANK TRANSFER</strong></div>
-      <p>* Cena 89 Kč je nyní nastavena pro objednávku. Cenu dopravy na Slovensko je potřeba před spuštěním potvrdit.</p>
+    <section class="section process" id="informace">
+      <header class="section-head reveal"><div><p class="kicker">JAK TO FUNGUJE</p><h2>Předobjednávka</h2></div></header>
+      <div class="steps">
+        <article class="reveal"><span>01</span><h3>Vyplníš objednávku</h3><p>Vybereš produkt, velikost a výdejní místo Zásilkovny.</p></article>
+        <article class="reveal"><span>02</span><h3>Obdržíš platební údaje</h3><p>Objednávku ručně potvrdíme e-mailem a pošleme číslo účtu a variabilní symbol.</p></article>
+        <article class="reveal"><span>03</span><h3>Začne výroba</h3><p>Po skončení sedmidenní předobjednávky předáme objednané kusy do výroby.</p></article>
+        <article class="reveal"><span>04</span><h3>Balík odešleme</h3><p>Objednávku pošleme přes Zásilkovnu v rámci Česka nebo Slovenska.</p></article>
+      </div>
+      <div class="facts reveal">
+        <div><small>Doprava</small><strong>Zásilkovna · 89 Kč</strong></div>
+        <div><small>Platba</small><strong>Bankovní převod</strong></div>
+        <div><small>Země</small><strong>Česko a Slovensko</strong></div>
+      </div>
     </section>
 
-    <section class="faq" id="faq">
-      <div class="section-kicker reveal">FAQ</div>
+    <section class="section faq" id="faq">
+      <header class="section-head reveal"><div><p class="kicker">POTŘEBUJEŠ VĚDĚT</p><h2>Časté otázky</h2></div></header>
       <div class="accordion">
-        <details class="reveal"><summary>Je zboží skladem?<span>+</span></summary><p>Ne. Oba produkty jsou v režimu pre-order a vyrábějí se až po ukončení sedmidenního dropu.</p></details>
-        <details class="reveal"><summary>Kdy objednávku dostanu?<span>+</span></summary><p>BADAMAN TEE bude doručeno přibližně za 2–3 týdny a BADAMAN JERSEY za 4–6 týdnů od ukončení dropu. Jde o odhad, který může ovlivnit výroba a přeprava.</p></details>
-        <details class="reveal"><summary>Kam doručujete?<span>+</span></summary><p>Prostřednictvím Zásilkovny po České republice a Slovensku.</p></details>
-        <details class="reveal"><summary>Jak probíhá platba?<span>+</span></summary><p>Po přijetí a potvrzení objednávky obdržíš e-mailem platební údaje k bankovnímu převodu.</p></details>
-        <details class="reveal"><summary>Mohu objednávku vrátit?<span>+</span></summary><p>Pravidla pro odstoupení od smlouvy budou před spuštěním uvedena v obchodních podmínkách podle platných spotřebitelských předpisů. Samotný pre-order automaticky neruší zákonné právo na odstoupení.</p></details>
-        <details class="reveal"><summary>Jak řešit reklamaci?<span>+</span></summary><p>Napiš na voskytt@icloud.com nebo do zpráv na Instagramu @voskytt. Uveď číslo objednávky, popis problému a přilož fotografie.</p></details>
+        <details class="reveal"><summary>Co znamená předobjednávka?</summary><p>Produkt objednáš během sedmidenního okna. Výroba začne až po jeho ukončení, takže zásilka neodchází ihned.</p></details>
+        <details class="reveal"><summary>Kdy objednávku dostanu?</summary><p>U trička počítej přibližně s 2–3 týdny, u dresu s 4–6 týdny od ukončení předobjednávky. Při neočekávaném zdržení tě budeme informovat.</p></details>
+        <details class="reveal"><summary>Jak probíhá platba?</summary><p>Po přijetí objednávky ti pošleme e-mail s částkou, číslem účtu a variabilním symbolem. QR platbu nepoužíváme.</p></details>
+        <details class="reveal"><summary>Je dres opravdu limitovaný?</summary><p>Ano. Vyrobí se nejvýše 15 kusů celkem, bez ohledu na zvolené velikosti. Po vyprodání se stejná série znovu vyrábět nebude.</p></details>
+        <details class="reveal"><summary>Mohu zboží vrátit nebo reklamovat?</summary><p>Práva spotřebitele se řídí platnými právními předpisy a obchodními podmínkami. Reklamaci řeš e-mailem na voskytt@icloud.com.</p></details>
       </div>
     </section>
 
-    <section class="contact" id="contact">
-      <p class="reveal">QUESTIONS?</p>
-      <a class="big-link reveal" href="mailto:voskytt@icloud.com">VOSKYTT@ICLOUD.COM ↗</a>
-      <a class="big-link reveal" href="https://www.instagram.com/voskytt/" target="_blank" rel="noopener">@VOSKYTT ↗</a>
+    <section class="closing reveal">
+      <img src="badaman-logo.png" alt="BADAMAN">
+      <p>DROP 01</p>
+      <a class="button button-light" href="objednavka.html">Přejít k předobjednávce</a>
     </section>
   </main>
 
   <footer>
-    <img src="voskytt-logo.png" alt="VOSKYTT">
-    <div class="footer-links">
-      <a href="privacy.html">OCHRANA OSOBNÍCH ÚDAJŮ</a>
-      <a href="terms.html">OBCHODNÍ INFORMACE</a>
-    </div>
-    <span>© <span id="year"></span> VOSKYTT</span>
+    <div><img src="voskytt-logo.png" alt="VOSKYTT"><p>BADAMAN DROP 01</p></div>
+    <div class="footer-links"><a href="mailto:voskytt@icloud.com">voskytt@icloud.com</a><a href="https://www.instagram.com/voskytt/" target="_blank" rel="noopener">@voskytt</a><a href="podminky.html">Obchodní podmínky</a><a href="soukromi.html">Ochrana osobních údajů</a></div>
+    <p class="copyright">© <span id="year"></span> VOSKYTT</p>
   </footer>
-
-  <aside class="order-drawer" aria-hidden="true">
-    <button class="drawer-backdrop" aria-label="Zavřít"></button>
-    <div class="drawer-panel">
-      <button class="drawer-close" type="button" aria-label="Zavřít">×</button>
-      <span class="drawer-kicker">PRE-ORDER</span>
-      <h2 id="drawerProduct">BADAMAN TEE</h2>
-      <p id="drawerMeta">800 Kč · dodání 2–3 týdny</p>
-      <form id="orderForm">
-        <input type="hidden" id="product" name="product">
-        <input type="hidden" id="price" name="price">
-        <label>JMÉNO A PŘÍJMENÍ<input id="name" name="name" autocomplete="name" required></label>
-        <div class="form-grid">
-          <label>E-MAIL<input id="email" name="email" type="email" autocomplete="email" required></label>
-          <label>TELEFON<input id="phone" name="phone" type="tel" autocomplete="tel" required></label>
-        </div>
-        <div class="form-grid">
-          <label>VELIKOST<select id="size" name="size" required><option value="">VYBER</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option></select></label>
-          <label>ZEMĚ<select id="country" name="country" required><option>Česká republika</option><option>Slovensko</option></select></label>
-        </div>
-        <label>VÝDEJNÍ MÍSTO ZÁSILKOVNY<input id="pickup" name="pickup" placeholder="Název / adresa pobočky" required></label>
-        <label>POZNÁMKA<textarea id="note" name="note" rows="3"></textarea></label>
-        <label class="check"><input type="checkbox" required><span>Souhlasím se zpracováním údajů pro vyřízení objednávky a beru na vědomí, že jde o pre-order.</span></label>
-        <div class="total"><span>CELKEM</span><strong id="drawerTotal">889 Kč</strong></div>
-        <button class="cta submit" type="submit">PŘIPRAVIT OBJEDNÁVKU <span>↗</span></button>
-        <small>Prozatím se otevře předvyplněný e-mail. Přímé odesílání formuláře dokončíme před spuštěním.</small>
-      </form>
-    </div>
-  </aside>
-
   <script src="script.js"></script>
 </body>
 </html>
