@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>Objednávka — VOSKYTT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header order-header">
+    <a class="logo" href="index.html" aria-label="VOSKYTT domů"><img src="voskytt-logo.png" alt="VOSKYTT"></a>
+    <nav><a href="index.html">ZPĚT</a><a href="https://www.instagram.com/voskytt/" target="_blank" rel="noopener">@VOSKYTT</a></nav>
+  </header>
+
+  <main class="order-page">
+    <section class="order-intro">
+      <p class="eyebrow">LIMITED DROP</p>
+      <h1>OBJEDNÁVKA</h1>
+      <p>Vyplň údaje níže. Platební údaje ti následně pošleme e-mailem.</p>
+    </section>
+
+    <form class="order-form" action="https://formsubmit.co/voskytt@icloud.com" method="POST">
+      <input type="hidden" name="_subject" value="Nová objednávka — BADAMAN">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://voskytt.cz/dekujeme.html">
+
+      <div class="form-row two-cols">
+        <label>Jméno a příjmení<input type="text" name="Jméno" autocomplete="name" required></label>
+        <label>E-mail<input type="email" name="E-mail" autocomplete="email" required></label>
+      </div>
+      <div class="form-row two-cols">
+        <label>Telefon<input type="tel" name="Telefon" autocomplete="tel" required></label>
+        <label>Produkt
+          <select id="productSelect" name="Produkt" required>
+            <option value="">Vyber produkt</option>
+            <option value="BADAMAN TEE" data-price="799">BADAMAN TEE — 799 Kč</option>
+            <option value="BADAMAN JERSEY" data-price="899">BADAMAN JERSEY — 899 Kč</option>
+          </select>
+        </label>
+      </div>
+      <div class="form-row two-cols">
+        <label>Velikost<select name="Velikost" required><option value="">Vyber velikost</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option></select></label>
+        <label>Země<select name="Země" required><option>Česko</option><option>Slovensko</option></select></label>
+      </div>
+      <div class="form-row">
+        <label>Zásilkovna — název nebo adresa pobočky<input type="text" name="Zásilkovna" placeholder="Např. Praha 1, Václavské náměstí" required></label>
+      </div>
+      <div class="form-row">
+        <label>Poznámka<textarea name="Poznámka" rows="4" placeholder="Nepovinné"></textarea></label>
+      </div>
+      <label class="consent"><input type="checkbox" required><span>Souhlasím se zpracováním údajů pro vyřízení objednávky.</span></label>
+      <div class="order-total"><span>CELKEM VČETNĚ DOPRAVY</span><strong id="totalPrice">—</strong></div>
+      <button class="button button-submit" type="submit">ODESLAT OBJEDNÁVKU</button>
+      <p class="form-note">Doprava přes Zásilkovnu: 89 Kč. Po odeslání ti ručně zašleme platební údaje.</p>
+    </form>
+  </main>
+  <script src="order.js"></script>
+</body>
+</html>
