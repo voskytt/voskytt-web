@@ -1,7 +1,5 @@
-# VOSKYTT – čistý finální balíček
+# VOSKYTT – oprava výběrových polí
 
-Nahraj všechny soubory přímo do kořene GitHub repozitáře.
+Tato verze opravuje neviditelné položky v rozbalovacích seznamech pro zemi, produkt, velikost a počet kusů.
 
-Tento balíček používá nové názvy CSS a JavaScript souborů (`style-final.css`, `script-final.js`, `order-final.js`), takže se nemůže načítat stará rozbitá verze z cache.
-
-Po nahrání otevři web v anonymním okně nebo použij Ctrl+Shift+R.
+Nahraj všechny soubory do kořene GitHub repozitáře a potvrď přepsání souborů.
