@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="VOSKYTT — limitovaný BADAMAN DROP. BADAMAN TEE a BADAMAN JERSEY.">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>VOSKYTT — BADAMAN DROP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="#top" aria-label="VOSKYTT domů"><img src="voskytt-logo.png" alt="VOSKYTT"></a>
+    <nav>
+      <a href="#shop">PRODUKTY</a>
+      <a href="#info">INFORMACE</a>
+      <a href="https://www.instagram.com/voskytt/" target="_blank" rel="noopener">@VOSKYTT</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-noise"></div>
+      <div class="hero-content reveal">
+        <p class="eyebrow">LIMITOVANÝ DROP / 01</p>
+        <img class="badaman-hero-logo" src="badaman-logo.png" alt="Badaman">
+        <h1>KOLEKCE</h1>
+        <p class="hero-copy">Dva kusy. Jeden drop. Dostupné pouze omezenou dobu.</p>
+        <a class="button button-light" href="#shop">PROHLÉDNOUT DROP</a>
+      </div>
+      <div class="scroll-indicator">POSUŇ DOLŮ</div>
+    </section>
+
+    <section class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>VOSKYTT / BADAMAN DROP / LIMITOVANÁ EDICE / VOSKYTT / BADAMAN DROP / LIMITOVANÁ EDICE /&nbsp;</span>
+        <span>VOSKYTT / BADAMAN DROP / LIMITOVANÁ EDICE / VOSKYTT / BADAMAN DROP / LIMITOVANÁ EDICE /&nbsp;</span>
+      </div>
+    </section>
+
+    <section class="shop" id="shop">
+      <div class="section-heading reveal">
+        <p class="eyebrow">DROP 01</p>
+        <h2>PRODUKTY</h2>
+      </div>
+
+      <div class="products">
+        <article class="product reveal" data-product="BADAMAN TEE" data-price="799">
+          <div class="product-image placeholder tee-placeholder">
+            <span class="placeholder-label">FOTOGRAFIE PRODUKTU<br>BRZY DOPLNÍME</span>
+            <span class="placeholder-code">01 / TRIČKO</span>
+          </div>
+          <div class="product-details">
+            <div>
+              <h3>BADAMAN TEE</h3>
+              <p class="price">799 Kč</p>
+            </div>
+            <p class="product-copy">Černé těžké tričko z prvního VOSKYTT dropu. 280 GSM, boxy unisex střih a prémiová bavlna.</p>
+            <button class="button order-button" type="button">OBJEDNAT</button>
+          </div>
+        </article>
+
+        <article class="product reveal" data-product="BADAMAN JERSEY" data-price="899">
+          <div class="product-image placeholder jersey-placeholder">
+            <span class="placeholder-label">FOTOGRAFIE PRODUKTU<br>BRZY DOPLNÍME</span>
+            <span class="placeholder-code">02 / DRES</span>
+          </div>
+          <div class="product-details">
+            <div>
+              <h3>BADAMAN JERSEY</h3>
+              <p class="price">899 Kč</p>
+            </div>
+            <p class="product-copy">Fotbalový dres BADAMAN v limitované edici pouze 15 kusů celkem.</p>
+            <button class="button order-button" type="button">OBJEDNAT</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="info" id="info">
+      <div class="info-grid">
+        <div class="reveal">
+          <p class="eyebrow">DOPRAVA</p>
+          <h3>ZÁSILKOVNA</h3>
+          <p>89 Kč za objednávku.</p>
+        </div>
+        <div class="reveal">
+          <p class="eyebrow">PLATBA</p>
+          <h3>BANKOVNÍ PŘEVOD</h3>
+          <p>Platební údaje obdržíš e-mailem po potvrzení objednávky.</p>
+        </div>
+        <div class="reveal">
+          <p class="eyebrow">KONTAKT</p>
+          <h3>VOSKYTT</h3>
+          <p><a href="mailto:voskytt@icloud.com">voskytt@icloud.com</a><br>
+          <a href="https://www.instagram.com/voskytt/" target="_blank" rel="noopener">@voskytt</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© <span id="year"></span> VOSKYTT</span>
+    <span>BADAMAN DROP 01</span>
+  </footer>
+
+  <div class="modal" id="orderModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-panel">
+      <button class="modal-close" type="button" aria-label="Zavřít objednávku" data-close-modal>×</button>
+
+      <div class="modal-heading">
+        <p class="eyebrow">OBJEDNÁVKA</p>
+        <h2 id="modalTitle">BADAMAN TEE</h2>
+        <p id="modalPrice">799 Kč + doprava 89 Kč</p>
+      </div>
+
+      <form id="orderForm">
+        <input type="hidden" id="product" name="product">
+        <input type="hidden" id="price" name="price">
+
+        <div class="form-row two-cols">
+          <label>
+            Jméno a příjmení
+            <input type="text" id="name" name="name" autocomplete="name" required>
+          </label>
+          <label>
+            E-mail
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </label>
+        </div>
+
+        <div class="form-row two-cols">
+          <label>
+            Telefon
+            <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+          </label>
+          <label>
+            Velikost
+            <select id="size" name="size" required>
+              <option value="">Vyber velikost</option>
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+              <option>XXL</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>
+            Zásilkovna — název nebo adresa výdejního místa
+            <input type="text" id="pickup" name="pickup" placeholder="Např. Brno, Česká 12" required>
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>
+            Poznámka
+            <textarea id="note" name="note" rows="3" placeholder="Nepovinné"></textarea>
+          </label>
+        </div>
+
+        <label class="consent">
+          <input type="checkbox" required>
+          <span>Souhlasím s použitím zadaných údajů pro vyřízení této objednávky.</span>
+        </label>
+
+        <div class="order-total">
+          <span>CELKEM</span>
+          <strong id="totalPrice">888 Kč</strong>
+        </div>
+
+        <button class="button button-submit" type="submit">PŘIPRAVIT OBJEDNÁVKU</button>
+        <p class="form-note">Po kliknutí se otevře e-mail s předvyplněnou objednávkou. Stačí jej odeslat na voskytt@icloud.com.</p>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
