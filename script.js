@@ -1,4 +1,88 @@
-const yearEls=document.querySelectorAll('#year');yearEls.forEach(el=>el.textContent=new Date().getFullYear());
-const menu=document.querySelector('.menu-button'),nav=document.querySelector('#main-nav');if(menu&&nav){menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open))});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}))}
-const reveals=document.querySelectorAll('.reveal');if('IntersectionObserver'in window){const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.08});reveals.forEach(el=>io.observe(el))}else reveals.forEach(el=>el.classList.add('visible'));
-const form=document.querySelector('#orderForm');if(form){const product=document.querySelector('#product'),summaryProduct=document.querySelector('#summaryProduct'),summaryTotal=document.querySelector('#summaryTotal');const params=new URLSearchParams(location.search);if(params.get('produkt')==='tee')product.value='BADAMAN TEE';if(params.get('produkt')==='jersey')product.value='BADAMAN JERSEY';function update(){const option=product.options[product.selectedIndex],price=Number(option?.dataset.price||0);summaryProduct.textContent=product.value||'—';summaryTotal.textContent=price?`${(price+89).toLocaleString('cs-CZ')} Kč`:'—'}product.addEventListener('change',update);update();form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;const option=product.options[product.selectedIndex],price=Number(option.dataset.price),total=price+89;const data={product:product.value,size:document.querySelector('#size').value,name:document.querySelector('#name').value,email:document.querySelector('#email').value,phone:document.querySelector('#phone').value,pickup:document.querySelector('#pickup').value,country:document.querySelector('#country').value,note:document.querySelector('#note').value};const subject=`Nová objednávka — ${data.product} — ${data.name}`;const body=`Ahoj,\n\nchci vytvořit předobjednávku BADAMAN DROP 01.\n\nPRODUKT: ${data.product}\nVELIKOST: ${data.size}\nCENA PRODUKTU: ${price} Kč\nDOPRAVA: 89 Kč\nCELKEM: ${total} Kč\n\nJMÉNO: ${data.name}\nE-MAIL: ${data.email}\nTELEFON: ${data.phone}\nZEMĚ: ${data.country}\nZÁSILKOVNA: ${data.pickup}\nPOZNÁMKA: ${data.note||'—'}\n\nPotvrzuji objednávku a souhlasím s obchodními podmínkami.`;location.href=`mailto:voskytt@icloud.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`})}
+const modal = document.getElementById("orderModal");
+const form = document.getElementById("orderForm");
+const productInput = document.getElementById("product");
+const priceInput = document.getElementById("price");
+const modalTitle = document.getElementById("modalTitle");
+const modalPrice = document.getElementById("modalPrice");
+const totalPrice = document.getElementById("totalPrice");
+
+function openModal(product, price) {
+  const delivery = 89;
+  productInput.value = product;
+  priceInput.value = price;
+  modalTitle.textContent = product;
+  modalPrice.textContent = `${price} Kč + doprava ${delivery} Kč`;
+  totalPrice.textContent = `${Number(price) + delivery} Kč`;
+  modal.classList.add("is-open");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+  setTimeout(() => document.getElementById("name").focus(), 100);
+}
+
+function closeModal() {
+  modal.classList.remove("is-open");
+  modal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-open");
+}
+
+document.querySelectorAll(".order-button").forEach((button) => {
+  button.addEventListener("click", () => {
+    const card = button.closest(".product");
+    openModal(card.dataset.product, card.dataset.price);
+  });
+});
+
+document.querySelectorAll("[data-close-modal]").forEach((el) => {
+  el.addEventListener("click", closeModal);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeModal();
+});
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const data = {
+    product: productInput.value,
+    price: Number(priceInput.value),
+    name: document.getElementById("name").value.trim(),
+    email: document.getElementById("email").value.trim(),
+    phone: document.getElementById("phone").value.trim(),
+    size: document.getElementById("size").value,
+    pickup: document.getElementById("pickup").value.trim(),
+    note: document.getElementById("note").value.trim()
+  };
+
+  const total = data.price + 89;
+  const subject = `Objednávka VOSKYTT — ${data.product} / ${data.size}`;
+  const body = [
+    "NOVÁ OBJEDNÁVKA VOSKYTT",
+    "",
+    `Produkt: ${data.product}`,
+    `Velikost: ${data.size}`,
+    `Cena produktu: ${data.price} Kč`,
+    "Doprava — Zásilkovna: 89 Kč",
+    `Celkem: ${total} Kč`,
+    "",
+    `Jméno: ${data.name}`,
+    `E-mail: ${data.email}`,
+    `Telefon: ${data.phone}`,
+    `Výdejní místo Zásilkovny: ${data.pickup}`,
+    `Poznámka: ${data.note || "—"}`,
+    "",
+    "Prosím o potvrzení objednávky a zaslání údajů k platbě bankovním převodem."
+  ].join("\n");
+
+  window.location.href =
+    `mailto:voskytt@icloud.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) entry.target.classList.add("visible");
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+document.getElementById("year").textContent = new Date().getFullYear();
