@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="VOSKYTT — BADAMAN DROP COMING SOON.">
+  <title>VOSKYTT — Drop Coming Soon</title>
+  <link rel="icon" type="image/png" href="voskytt-logo.png">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #000;
+      --text: #fff;
+      --muted: rgba(255,255,255,.62);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { width: 100%; min-height: 100%; }
+
+    body {
+      margin: 0;
+      min-height: 100svh;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: geometricPrecision;
+    }
+
+    main {
+      width: min(90vw, 900px);
+      padding: 36px 20px;
+      text-align: center;
+      animation: reveal 1.15s cubic-bezier(.2,.7,.2,1) both;
+    }
+
+    .logo {
+      display: block;
+      width: clamp(230px, 42vw, 520px);
+      height: auto;
+      margin: 0 auto clamp(52px, 8vh, 96px);
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.1rem, 2.2vw, 1.7rem);
+      font-weight: 600;
+      letter-spacing: .34em;
+      line-height: 1.35;
+      text-transform: uppercase;
+      padding-left: .34em;
+    }
+
+    p {
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: clamp(.72rem, 1.2vw, .88rem);
+      font-weight: 400;
+      letter-spacing: .3em;
+      line-height: 1.5;
+      text-transform: uppercase;
+      padding-left: .3em;
+    }
+
+    @keyframes reveal {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 520px) {
+      main { padding-inline: 14px; }
+      .logo { width: min(78vw, 360px); margin-bottom: 58px; }
+      h1 { letter-spacing: .22em; padding-left: .22em; }
+      p { letter-spacing: .24em; padding-left: .24em; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      main { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <main aria-label="VOSKYTT coming soon">
+    <img class="logo" src="voskytt-logo.png" alt="VOSKYTT">
+    <h1>Drop Coming Soon</h1>
+    <p>Stay Ready.</p>
+  </main>
+</body>
+</html>
