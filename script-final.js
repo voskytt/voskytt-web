@@ -19,9 +19,11 @@ window.addEventListener("pageshow", () => {
 });
 
 
-// Galerie BADAMAN TEE
-const gallery = document.querySelector('[data-gallery="tee"]');
-if (gallery) {
+// Produktové galerie
+const lightbox = document.getElementById('gallery-lightbox');
+let activeGallery = null;
+
+const galleryControllers = [...document.querySelectorAll('.product-gallery')].map((gallery) => {
   const slides = [...gallery.querySelectorAll('.gallery-slide')];
   const thumbs = [...gallery.querySelectorAll('.gallery-thumb')];
   const counter = gallery.querySelector('.gallery-counter');
@@ -30,11 +32,19 @@ if (gallery) {
   let current = 0;
   let touchStartX = 0;
 
+  const updateLightbox = () => {
+    if (!lightbox || activeGallery !== controller) return;
+    const img = slides[current].querySelector('img');
+    lightbox.querySelector('img').src = img.src;
+    lightbox.querySelector('img').alt = img.alt;
+    lightbox.querySelector('.lightbox-counter').textContent = `${current + 1} / ${slides.length}`;
+  };
+
   const show = (index, moveThumbs = true) => {
     current = (index + slides.length) % slides.length;
     slides.forEach((slide, i) => slide.classList.toggle('is-active', i === current));
     thumbs.forEach((thumb, i) => thumb.classList.toggle('is-active', i === current));
-    counter.textContent = `${current + 1} / ${slides.length}`;
+    if (counter) counter.textContent = `${current + 1} / ${slides.length}`;
     if (moveThumbs && thumbStrip && thumbs[current]) {
       const thumb = thumbs[current];
       const target = thumb.offsetLeft - (thumbStrip.clientWidth - thumb.offsetWidth) / 2;
@@ -43,73 +53,80 @@ if (gallery) {
     updateLightbox();
   };
 
-  gallery.querySelector('.gallery-prev').addEventListener('click', () => show(current - 1));
-  gallery.querySelector('.gallery-next').addEventListener('click', () => show(current + 1));
+  const controller = { show, getCurrent: () => current, slides };
+
+  gallery.querySelector('.gallery-prev')?.addEventListener('click', () => show(current - 1));
+  gallery.querySelector('.gallery-next')?.addEventListener('click', () => show(current + 1));
   thumbs.forEach((thumb) => thumb.addEventListener('click', () => show(Number(thumb.dataset.index))));
-  stage.addEventListener('keydown', (e) => {
+  stage?.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') show(current - 1);
     if (e.key === 'ArrowRight') show(current + 1);
   });
-  stage.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].clientX; }, { passive: true });
-  stage.addEventListener('touchend', (e) => {
+  stage?.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].clientX; }, { passive: true });
+  stage?.addEventListener('touchend', (e) => {
     const delta = e.changedTouches[0].clientX - touchStartX;
     if (Math.abs(delta) > 45) show(current + (delta < 0 ? 1 : -1));
   }, { passive: true });
 
-  const lightbox = document.getElementById('gallery-lightbox');
-  const lightboxImg = lightbox.querySelector('img');
-  const lightboxCounter = lightbox.querySelector('.lightbox-counter');
-  const updateLightbox = () => {
-    const img = slides[current].querySelector('img');
-    lightboxImg.src = img.src;
-    lightboxImg.alt = img.alt;
-    lightboxCounter.textContent = `${current + 1} / ${slides.length}`;
-  };
   const openLightbox = () => {
+    if (!lightbox) return;
+    activeGallery = controller;
     updateLightbox();
     lightbox.classList.add('is-open');
     lightbox.setAttribute('aria-hidden', 'false');
     document.body.classList.add('modal-open');
   };
+  gallery.querySelector('.gallery-zoom')?.addEventListener('click', openLightbox);
+  slides.forEach((slide) => slide.addEventListener('dblclick', openLightbox));
+  show(0, false);
+  return controller;
+});
+
+if (lightbox) {
   const closeLightbox = () => {
     lightbox.classList.remove('is-open');
     lightbox.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('modal-open');
+    activeGallery = null;
   };
-  gallery.querySelector('.gallery-zoom').addEventListener('click', openLightbox);
-  slides.forEach((slide) => slide.addEventListener('dblclick', openLightbox));
-  lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
-  lightbox.querySelector('.lightbox-prev').addEventListener('click', () => show(current - 1));
-  lightbox.querySelector('.lightbox-next').addEventListener('click', () => show(current + 1));
+  lightbox.querySelector('.lightbox-close')?.addEventListener('click', closeLightbox);
+  lightbox.querySelector('.lightbox-prev')?.addEventListener('click', () => {
+    if (activeGallery) activeGallery.show(activeGallery.getCurrent() - 1);
+  });
+  lightbox.querySelector('.lightbox-next')?.addEventListener('click', () => {
+    if (activeGallery) activeGallery.show(activeGallery.getCurrent() + 1);
+  });
   lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
-
   document.addEventListener('keydown', (e) => {
-    if (!lightbox.classList.contains('is-open')) return;
+    if (!lightbox.classList.contains('is-open') || !activeGallery) return;
     if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowLeft') show(current - 1);
-    if (e.key === 'ArrowRight') show(current + 1);
+    if (e.key === 'ArrowLeft') activeGallery.show(activeGallery.getCurrent() - 1);
+    if (e.key === 'ArrowRight') activeGallery.show(activeGallery.getCurrent() + 1);
   });
-
-  show(0, false);
 }
 
-// Velikostní tabulka
-const sizeGuideModal = document.getElementById('size-guide-modal');
-const sizeGuideTrigger = document.querySelector('[data-size-guide]');
-if (sizeGuideModal && sizeGuideTrigger) {
-  const open = () => {
-    sizeGuideModal.classList.add('is-open');
-    sizeGuideModal.setAttribute('aria-hidden', 'false');
+// Velikostní tabulky
+const closeModal = (modal) => {
+  modal.classList.remove('is-open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('modal-open');
+};
+
+document.querySelectorAll('[data-modal-target]').forEach((trigger) => {
+  const modal = document.getElementById(trigger.dataset.modalTarget);
+  if (!modal) return;
+  trigger.addEventListener('click', () => {
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('modal-open');
-  };
-  const close = () => {
-    sizeGuideModal.classList.remove('is-open');
-    sizeGuideModal.setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('modal-open');
-  };
-  sizeGuideTrigger.addEventListener('click', open);
-  sizeGuideModal.querySelectorAll('[data-modal-close]').forEach((el) => el.addEventListener('click', close));
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && sizeGuideModal.classList.contains('is-open')) close();
   });
-}
+});
+
+document.querySelectorAll('.modal').forEach((modal) => {
+  modal.querySelectorAll('[data-modal-close]').forEach((el) => el.addEventListener('click', () => closeModal(modal)));
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key !== 'Escape') return;
+  document.querySelectorAll('.modal.is-open').forEach(closeModal);
+});

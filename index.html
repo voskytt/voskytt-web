@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style-final.css?v=3">
+  <link rel="stylesheet" href="style-final.css?v=4">
 </head>
 <body>
   <header class="site-header">
@@ -142,15 +142,81 @@
               <p class="price">799 Kč</p>
             </div>
             <p class="product-copy">280 GSM • Boxy střih • Prémiová bavlna</p>
-            <button class="size-guide-trigger" type="button" data-size-guide>VELIKOSTNÍ TABULKA</button>
+            <button class="size-guide-trigger" type="button" data-modal-target="tee-size-guide-modal">VELIKOSTNÍ TABULKA</button>
             <a class="button order-button" href="objednavka.html?produkt=tee">PŘEDOBJEDNAT</a>
           </div>
         </article>
 
         <article class="product reveal" data-product="BADAMAN JERSEY" data-price="899">
-          <div class="product-image placeholder jersey-placeholder">
-            <span class="placeholder-label">FOTKA PRODUKTU<br>JIŽ BRZY</span>
-            <span class="placeholder-code">JERSEY</span>
+          <div class="product-gallery" data-gallery="jersey">
+            <div class="gallery-stage" tabindex="0" aria-label="Galerie BADAMAN JERSEY">
+              <figure class="gallery-slide is-active" data-index="0">
+                <img src="assets/jersey-01.webp" alt="Zadní strana dresu položená – hlavní fotografie" fetchpriority="high">
+              </figure>
+              <figure class="gallery-slide" data-index="1">
+                <img src="assets/jersey-02.webp" alt="Zadní strana dresu – produktový pohled" loading="lazy">
+              </figure>
+              <figure class="gallery-slide" data-index="2">
+                <img src="assets/jersey-03.webp" alt="Zadní strana dresu – rovný pohled" loading="lazy">
+              </figure>
+              <figure class="gallery-slide" data-index="3">
+                <img src="assets/jersey-04.webp" alt="Zadní strana dresu položená z úhlu" loading="lazy">
+              </figure>
+              <figure class="gallery-slide" data-index="4">
+                <img src="assets/jersey-05.webp" alt="Detail jména VOSKYTT a čísla 13" loading="lazy">
+              </figure>
+              <figure class="gallery-slide" data-index="5">
+                <img src="assets/jersey-06.webp" alt="Přední strana dresu položená" loading="lazy">
+              </figure>
+              <figure class="gallery-slide" data-index="6">
+                <img src="assets/jersey-07.webp" alt="Dres na postavě – přední strana" loading="lazy">
+              </figure>
+              <figure class="gallery-slide" data-index="7">
+                <img src="assets/jersey-08.webp" alt="Dres na postavě – zadní strana" loading="lazy">
+              </figure>
+              <figure class="gallery-slide" data-index="8">
+                <img src="assets/jersey-09.webp" alt="Přední strana dresu – rovný pohled" loading="lazy">
+              </figure>
+              <figure class="gallery-slide" data-index="9">
+                <img src="assets/jersey-10.webp" alt="Přední strana dresu – produktový pohled z úhlu" loading="lazy">
+              </figure>
+              <button class="gallery-arrow gallery-prev" type="button" aria-label="Předchozí fotografie">←</button>
+              <button class="gallery-arrow gallery-next" type="button" aria-label="Další fotografie">→</button>
+              <button class="gallery-zoom" type="button" aria-label="Zvětšit fotografii">ZVĚTŠIT</button>
+              <div class="gallery-counter" aria-live="polite">1 / 10</div>
+            </div>
+            <div class="gallery-thumbs" aria-label="Náhledy fotografií">
+              <button class="gallery-thumb is-active" type="button" data-index="0" aria-label="Zobrazit fotografii 1">
+                <img src="assets/jersey-01.webp" alt="" loading="lazy">
+              </button>
+              <button class="gallery-thumb" type="button" data-index="1" aria-label="Zobrazit fotografii 2">
+                <img src="assets/jersey-02.webp" alt="" loading="lazy">
+              </button>
+              <button class="gallery-thumb" type="button" data-index="2" aria-label="Zobrazit fotografii 3">
+                <img src="assets/jersey-03.webp" alt="" loading="lazy">
+              </button>
+              <button class="gallery-thumb" type="button" data-index="3" aria-label="Zobrazit fotografii 4">
+                <img src="assets/jersey-04.webp" alt="" loading="lazy">
+              </button>
+              <button class="gallery-thumb" type="button" data-index="4" aria-label="Zobrazit fotografii 5">
+                <img src="assets/jersey-05.webp" alt="" loading="lazy">
+              </button>
+              <button class="gallery-thumb" type="button" data-index="5" aria-label="Zobrazit fotografii 6">
+                <img src="assets/jersey-06.webp" alt="" loading="lazy">
+              </button>
+              <button class="gallery-thumb" type="button" data-index="6" aria-label="Zobrazit fotografii 7">
+                <img src="assets/jersey-07.webp" alt="" loading="lazy">
+              </button>
+              <button class="gallery-thumb" type="button" data-index="7" aria-label="Zobrazit fotografii 8">
+                <img src="assets/jersey-08.webp" alt="" loading="lazy">
+              </button>
+              <button class="gallery-thumb" type="button" data-index="8" aria-label="Zobrazit fotografii 9">
+                <img src="assets/jersey-09.webp" alt="" loading="lazy">
+              </button>
+              <button class="gallery-thumb" type="button" data-index="9" aria-label="Zobrazit fotografii 10">
+                <img src="assets/jersey-10.webp" alt="" loading="lazy">
+              </button>
+            </div>
           </div>
           <div class="product-details">
             <div>
@@ -158,6 +224,7 @@
               <p class="price">899 Kč</p>
             </div>
             <p class="product-copy">Pouze 15 kusů celkem • Limitovaná série</p>
+            <button class="size-guide-trigger" type="button" data-modal-target="jersey-size-guide-modal">VELIKOSTNÍ TABULKA</button>
             <a class="button order-button" href="objednavka.html?produkt=jersey">PŘEDOBJEDNAT</a>
           </div>
         </article>
@@ -195,7 +262,7 @@
   </footer>
 
 
-  <div class="modal" id="size-guide-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="size-guide-title">
+  <div class="modal" id="tee-size-guide-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="size-guide-title">
     <div class="modal-backdrop" data-modal-close></div>
     <div class="modal-panel">
       <button class="modal-close" type="button" data-modal-close aria-label="Zavřít">×</button>
@@ -203,6 +270,17 @@
       <h2 id="size-guide-title">VELIKOSTNÍ TABULKA</h2>
       <img src="assets/tee-size-guide.webp" alt="Velikostní tabulka BADAMAN TEE v centimetrech">
       <p class="modal-note">Rozměry jsou uvedené v centimetrech. Pro správnou volbu doporučujeme porovnat rozměry s tričkem, které ti dobře sedí.</p>
+    </div>
+  </div>
+
+  <div class="modal" id="jersey-size-guide-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="jersey-size-guide-title">
+    <div class="modal-backdrop" data-modal-close></div>
+    <div class="modal-panel">
+      <button class="modal-close" type="button" data-modal-close aria-label="Zavřít">×</button>
+      <p class="eyebrow">BADAMAN JERSEY</p>
+      <h2 id="jersey-size-guide-title">VELIKOSTNÍ TABULKA</h2>
+      <img src="assets/jersey-size-guide.webp" alt="Velikostní tabulka BADAMAN JERSEY v centimetrech">
+      <p class="modal-note">Rozměry jsou uvedené v centimetrech. Tolerance při výrobě je přibližně ± 2 cm.</p>
     </div>
   </div>
 
@@ -214,6 +292,6 @@
     <div class="lightbox-counter"></div>
   </div>
 
-  <script src="script-final.js?v=3"></script>
+  <script src="script-final.js?v=4"></script>
 </body>
 </html>
